@@ -112,11 +112,11 @@ jobs:
         run: cyan -i ytm.ipa -o YTMusicUltimate_${{ env.YTM_VERSION }}.ipa -uwsf ytmult.deb -n "${{ inputs.display_name }}" -b ${{ inputs.bundle_id }} 
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2.5.0
+        uses: softprops/action-gh-release@v3
         with:
+          tag_name: ytpm-${{ env.YTM_VERSION }}
           name: YTMusicUltimate ${{ env.YTM_VERSION }}
           files: YTMusicUltimate_${{ env.YTM_VERSION }}.ipa
-          draft: true
 
       - name: Output Release URL
         run: |
